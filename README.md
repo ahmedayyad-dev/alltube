@@ -6,7 +6,7 @@
 > - Changed Python version to **`3.9`**
 > - Updated the **Deploy to Heroku** button for the current project
 
-_Commit by `ayyad200`_
+_Commit by `ahmedayyad-dev`_
 
 
 
@@ -58,7 +58,7 @@ composer install
 
 ### On Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ayyad200/alltube)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ahmedayyad-dev/alltube)
 
 ### On Cloudron
 
