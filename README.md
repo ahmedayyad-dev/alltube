@@ -1,9 +1,12 @@
-### 🔄 Version Update Notice
+### 🔄 Update Notice
 
-> **Note:** The only change in this update is the `yt-dlp` version number,  
-> updated from **`2023.03.04`** to **`2025.06.09`**.
+> **Changes made in this update:**
+>
+> - Updated `yt-dlp` version to **`2025.06.09`**
+> - Changed Python version to **`3.9`**
 
 _Commit by `ayyad200`_
+
 
 # AllTube Download
 
