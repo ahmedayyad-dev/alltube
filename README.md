@@ -4,8 +4,10 @@
 >
 > - Updated `yt-dlp` version to **`2025.06.09`**
 > - Changed Python version to **`3.9`**
+> - Updated the **Deploy to Heroku** button for the current project
 
 _Commit by `ayyad200`_
+
 
 
 # AllTube Download
