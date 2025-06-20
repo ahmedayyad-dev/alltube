@@ -1,3 +1,10 @@
+### 🔄 Version Update Notice
+
+> **Note:** The only change in this update is the `yt-dlp` version number,  
+> updated from **`2023.03.04`** to **`2025.06.09`**.
+
+_Commit by `ayyad200`_
+
 # AllTube Download
 
 HTML GUI for youtube-dl
