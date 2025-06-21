@@ -9,7 +9,7 @@ namespace Alltube\Test;
 use Alltube\Controller\JsonController;
 use Alltube\Exception\ConfigException;
 use Alltube\Exception\DependencyException;
-use Alltube\Library\Exception\YoutubedlException;
+use Alltube\Exception\YoutubedlException;
 use SmartyException;
 
 /**

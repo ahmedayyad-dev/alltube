@@ -5,6 +5,7 @@
 > - Updated `yt-dlp` version to **`2025.06.09`**
 > - Changed Python version to **`3.9`**
 > - Updated the **Deploy to Heroku** button for the current project
+> - Removed **`alltube-library`** from the project requirements
 
 _Commit by `ahmedayyad-dev`_
 
@@ -169,10 +170,10 @@ sudo apt-get install ffmpeg
 
 If your ffmpeg binary is not installed at `/usr/bin/ffmpeg`, you also need to edit the `ffmpeg` variable in `config.yml`.
 
-## Use as a library
+## ~~Use as a library~~
 
-The `Video` class is now available as [a separate package](https://packagist.org/packages/rudloff/alltube-library)
-so that you can reuse it in your projects.
+~~The `Video` class is now available as [a separate package](https://packagist.org/packages/rudloff/alltube-library)
+so that you can reuse it in your projects.~~
 
 ## JSON API
 

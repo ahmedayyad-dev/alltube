@@ -7,8 +7,8 @@
 namespace Alltube\Controller;
 
 use Alltube\Config;
-use Alltube\Library\Downloader;
-use Alltube\Library\Video;
+use Alltube\Downloader;
+use Alltube\Video;
 use Alltube\LocaleManager;
 use Aura\Session\Segment;
 use Graby\HttpClient\Plugin\ServerSideRequestForgeryProtection\Exception\InvalidURLException;

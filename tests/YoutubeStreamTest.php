@@ -8,7 +8,7 @@ namespace Alltube\Test;
 
 use Alltube\Exception\ConfigException;
 use Alltube\Exception\DependencyException;
-use Alltube\Library\Exception\AlltubeLibraryException;
+use Alltube\Exception\AlltubeLibraryException;
 use Alltube\Stream\YoutubeStream;
 use SmartyException;
 

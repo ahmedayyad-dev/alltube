@@ -9,9 +9,9 @@ namespace Alltube\Test;
 use Alltube\Controller\DownloadController;
 use Alltube\Exception\ConfigException;
 use Alltube\Exception\DependencyException;
-use Alltube\Library\Exception\EmptyUrlException;
-use Alltube\Library\Exception\RemuxException;
-use Alltube\Library\Exception\YoutubedlException;
+use Alltube\Exception\EmptyUrlException;
+use Alltube\Exception\RemuxException;
+use Alltube\Exception\YoutubedlException;
 use SmartyException;
 
 /**

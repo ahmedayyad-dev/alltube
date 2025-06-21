@@ -6,8 +6,8 @@
 
 namespace Alltube\Stream;
 
-use Alltube\Library\Exception\AlltubeLibraryException;
-use Alltube\Library\Video;
+use Alltube\Exception\AlltubeLibraryException;
+use Alltube\Video;
 use Slim\Http\Stream;
 
 /**

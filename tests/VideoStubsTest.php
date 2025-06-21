@@ -8,10 +8,10 @@ namespace Alltube\Test;
 
 use Alltube\Exception\ConfigException;
 use Alltube\Exception\DependencyException;
-use Alltube\Library\Downloader;
-use Alltube\Library\Exception\AlltubeLibraryException;
-use Alltube\Library\Exception\PopenStreamException;
-use Alltube\Library\Video;
+use Alltube\Downloader;
+use Alltube\Exception\AlltubeLibraryException;
+use Alltube\Exception\PopenStreamException;
+use Alltube\Video;
 use Mockery;
 use phpmock\mockery\PHPMockery;
 use SmartyException;

@@ -8,7 +8,7 @@ namespace Alltube\Test;
 
 use Alltube\Exception\ConfigException;
 use Alltube\Exception\DependencyException;
-use Alltube\Library\Downloader;
+use Alltube\Downloader;
 use Psr\Http\Message\StreamInterface;
 use RuntimeException;
 use SmartyException;

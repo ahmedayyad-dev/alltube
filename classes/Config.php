@@ -7,7 +7,7 @@
 namespace Alltube;
 
 use Alltube\Exception\ConfigException;
-use Alltube\Library\Downloader;
+use Alltube\Downloader;
 use Jawira\CaseConverter\CaseConverterException;
 use Jean85\PrettyVersions;
 use Symfony\Component\ErrorHandler\Debug;

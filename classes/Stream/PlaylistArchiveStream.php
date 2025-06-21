@@ -6,9 +6,9 @@
 
 namespace Alltube\Stream;
 
-use Alltube\Library\Downloader;
-use Alltube\Library\Exception\AlltubeLibraryException;
-use Alltube\Library\Video;
+use Alltube\Downloader;
+use Alltube\Exception\AlltubeLibraryException;
+use Alltube\Video;
 use Barracuda\ArchiveStream\ZipArchive;
 use Psr\Http\Message\StreamInterface;
 

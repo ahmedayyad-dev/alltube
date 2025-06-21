@@ -7,15 +7,15 @@
 namespace Alltube\Controller;
 
 use Alltube\Config;
-use Alltube\Library\Exception\EmptyUrlException;
-use Alltube\Library\Exception\InvalidProtocolConversionException;
-use Alltube\Library\Exception\PasswordException;
-use Alltube\Library\Exception\AlltubeLibraryException;
-use Alltube\Library\Exception\PlaylistConversionException;
-use Alltube\Library\Exception\PopenStreamException;
-use Alltube\Library\Exception\RemuxException;
-use Alltube\Library\Exception\WrongPasswordException;
-use Alltube\Library\Exception\YoutubedlException;
+use Alltube\Exception\EmptyUrlException;
+use Alltube\Exception\InvalidProtocolConversionException;
+use Alltube\Exception\PasswordException;
+use Alltube\Exception\AlltubeLibraryException;
+use Alltube\Exception\PlaylistConversionException;
+use Alltube\Exception\PopenStreamException;
+use Alltube\Exception\RemuxException;
+use Alltube\Exception\WrongPasswordException;
+use Alltube\Exception\YoutubedlException;
 use Alltube\Stream\ConvertedPlaylistArchiveStream;
 use Alltube\Stream\PlaylistArchiveStream;
 use Alltube\Stream\YoutubeStream;

@@ -6,9 +6,9 @@
 
 namespace Alltube\Controller;
 
-use Alltube\Library\Exception\PasswordException;
-use Alltube\Library\Exception\AlltubeLibraryException;
-use Alltube\Library\Exception\WrongPasswordException;
+use Alltube\Exception\PasswordException;
+use Alltube\Exception\AlltubeLibraryException;
+use Alltube\Exception\WrongPasswordException;
 use Alltube\Locale;
 use Alltube\Middleware\CspMiddleware;
 use Exception;

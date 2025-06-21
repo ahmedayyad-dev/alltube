@@ -9,7 +9,7 @@ namespace Alltube\Test;
 use Alltube\Controller\FrontController;
 use Alltube\Exception\ConfigException;
 use Alltube\Exception\DependencyException;
-use Alltube\Library\Exception\AlltubeLibraryException;
+use Alltube\Exception\AlltubeLibraryException;
 use Exception;
 use Graby\HttpClient\Plugin\ServerSideRequestForgeryProtection\Exception\InvalidURLException;
 use Slim\Http\Environment;

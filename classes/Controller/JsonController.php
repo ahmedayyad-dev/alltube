@@ -6,7 +6,7 @@
 
 namespace Alltube\Controller;
 
-use Alltube\Library\Exception\AlltubeLibraryException;
+use Alltube\Exception\AlltubeLibraryException;
 use Graby\HttpClient\Plugin\ServerSideRequestForgeryProtection\Exception\InvalidURLException;
 use Slim\Http\Request;
 use Slim\Http\Response;
