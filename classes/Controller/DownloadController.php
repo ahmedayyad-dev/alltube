@@ -25,8 +25,6 @@ use Slim\Http\Response;
 use Slim\Http\StatusCode;
 use Slim\Http\Stream;
 
-
-
 /**
  * Controller that returns a video or audio file.
  */
