@@ -169,16 +169,14 @@ class Config
         $this->applyOptions($options);
         $this->getEnv();
 
-        // إضافة proxy لو موجود
         $proxyUrl = getenv('PROXY');
-        if ($proxyUrl) {
-            // حذف 'default,-generic' مؤقتاً
+        if ($proxyUrl && is_string($proxyUrl)) {
             $lastItem = array_pop($this->params);
-            // إضافة proxy
             $this->params[] = '--proxy';
             $this->params[] = $proxyUrl;
-            // إضافة 'default,-generic' تاني
-            $this->params[] = $lastItem;
+            if ($lastItem !== null) {
+                $this->params[] = $lastItem;
+            }
         }
 
         $this->validateOptions();
