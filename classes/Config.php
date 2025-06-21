@@ -45,7 +45,7 @@ class Config
         '--restrict-filenames',
         '--no-playlist',
         '--skip-download',
-//        '--use-extractors',
+        '--use-extractors',
         'default,-generic',
     ];
 
@@ -171,7 +171,7 @@ class Config
         $this->getEnv();
 
         $proxyUrl = getenv('PROXY');
-        if ($proxyUrl && is_string($proxyUrl)) {
+        if ($proxyUrl && is_string($proxyUrl) and $proxyUrl != 'socks5://user:pass@ip:port') {
             $lastItem = array_pop($this->params);
             $this->params[] = '--proxy';
             $this->params[] = $proxyUrl;
