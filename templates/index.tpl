@@ -51,10 +51,10 @@
         </a>
     </div>
 
-    <div id="api_link" class="api_wrapper" style="margin-top:2rem; text-align:center;">
+    <div id="api_link" class="api_wrapper" style="margin-top:4rem; text-align:center;">
         <a href="https://rapidapi.com/ahmedyad200/api/youtube-to-telegram-uploader-api" target="_blank"
            class="apiBtn large-font"
-           style="display:inline-block; padding:0.75rem 1.5rem; background:#007bff; color:#fff; text-decoration:none; border-radius:0.25rem; transition:background-color .3s;"
+           style="display:inline-block; padding:1.2rem 2.5rem; background:#007bff; color:#fff; text-decoration:none; border-radius:0.4rem; transition:background-color .3s; font-size:1.2rem; font-weight:bold;"
            onmouseover="this.style.backgroundColor='#0056b3'"
            onmouseout="this.style.backgroundColor='#007bff'">
             {t}Use the API on RapidAPI{/t}
