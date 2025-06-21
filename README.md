@@ -1,16 +1,26 @@
 ### 🔄 Update Notice
 
-> **Changes made in this update:**
+> **Key differences between this fork and the original `Rudloff/alltube`:**
 >
-> - Updated `yt-dlp` version to **`2025.06.09`**
-> - Changed Python version to **`3.10`**
-> - Updated the **Deploy to Heroku** button for the current project
-> - Removed **`alltube-library`** from the project requirements
-> - Added support for setting a **YouTube proxy** via the `PROXY` environment variable
-> - Changed Php version to **`8.1`**
+> **Platform & Dependencies**
+> - Raised the minimum **PHP** requirement to **`8.1`**
+> - Upgraded to **`guzzlehttp/psr7 2.x`** alongside **`guzzle 7.x`**
+>
+> **Download & Streaming**
+> - **Re-implemented `YoutubeStream`** to *compose* `AppendStream` (required for psr7 2.x)
+> - **Removed the `STREAM` environment variable** after merging its logic into the inline-stream workflow
+>
+> **Environment & Deployment**
+> - Added a **`PROXY`** environment variable: it’s applied **only to the server-side requests that Alltube makes to third-party sites** (e.g. YouTube, Facebook)
+> - **Adjusted the “Deploy to Heroku” button** so it works seamlessly with the current project setup
+>
+> **Tools & Media**
+> - Bumped **`yt-dlp`** to **`2025.06.09`**
+> - **Merged `alltube-library` directly into the project** (no longer a separate sub-module)
+>
+> _Commit by `ahmedayyad-dev`_
 
 
-_Commit by `ahmedayyad-dev`_
 
 
 

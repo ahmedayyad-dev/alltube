@@ -23,11 +23,6 @@
       "value": "/app/.heroku/python/bin/python",
       "required": true
     },
-    "STREAM": {
-      "description": "Enable stream mode",
-      "value": "false",
-      "required": false
-    },
     "PROXY": {
       "description": "Proxy for youtube",
       "value": "socks5://user:pass@ip:port",
