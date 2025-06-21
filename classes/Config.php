@@ -39,12 +39,13 @@ class Config
      * @var string[]
      */
     public array $params = [
-        '--no-warnings',
-        '--ignore-errors',
+//        '--no-warnings',
+//        '--ignore-errors',
         '--flat-playlist',
         '--restrict-filenames',
         '--no-playlist',
-        '--use-extractors',
+        '--skip-download',
+//        '--use-extractors',
         'default,-generic',
     ];
 
