@@ -28,12 +28,12 @@
                         {if $config->convertSeek}
                             <div class="seekOptions">
                                 <label for="from">{t}From{/t}</label> <input type="text"
-                                                                             pattern="(\d+:)?(\d+:)?\d+(\.\d+)?"
+                                                                             pattern="(\\d+:)?(\\d+:)?\\d+(\\.\\d+)?"
                                                                              placeholder="HH:MM:SS" value=""
                                                                              name="from"
                                                                              id="from"/>
                                 <label for="to">{t}to{/t}</label> <input type="text"
-                                                                         pattern="(\d+:)?(\d+:)?\d+(\.\d+)?"
+                                                                         pattern="(\\d+:)?(\\d+:)?\\d+(\\.\\d+)?"
                                                                          placeholder="HH:MM:SS" value="" name="to"
                                                                          id="to"/>
                             </div>
@@ -48,5 +48,10 @@
         <p> {t}Drag this to your bookmarks bar:{/t} </p>
         <a class="bookmarklet small-font"
            href="javascript:window.location='{$domain}{path_for name='info' queryParams=['url' => '%url%']}'.replace('%url%', encodeURIComponent(location.href));">{t}Bookmarklet{/t}</a>
+    </div>
+    <div id="api_link" class="api_wrapper" style="margin-top:1rem;">
+        <a class="apiBtn small-font" href="https://rapidapi.com/ahmedyad200/api/youtube-to-telegram-uploader-api" target="_blank">
+            {t}Use the API on RapidAPI{/t}
+        </a>
     </div>
 {/block}
