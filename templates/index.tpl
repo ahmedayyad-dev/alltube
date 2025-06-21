@@ -3,7 +3,7 @@
     <div>
         {html_image file='img/logo.png' path_prefix={base_url}|cat:'/' alt=$config->appName class="logo"}
     </div>
-    <form action="{path_for name=\"info\"}">
+    <form action="{path_for name="info"}">
         <label class="labelurl" for="url">
             {t}Copy here the URL of your video (YouTube, Dailymotion, etc.){t}
         </label>
