@@ -25,6 +25,8 @@ use Slim\Http\Response;
 use Slim\Http\StatusCode;
 use Slim\Http\Stream;
 
+
+
 /**
  * Controller that returns a video or audio file.
  */
@@ -180,53 +182,65 @@ class DownloadController extends BaseController
             } else {
                 $stream = new PlaylistArchiveStream($this->downloader, $this->video);
             }
-            $response = $response->withHeader('Content-Type', 'application/zip');
-            $response = $response->withHeader(
-                'Content-Disposition',
-                'attachment; filename="' . $this->video->title . '.zip"'
-            );
 
-            return $response->withBody($stream);
-        } elseif ($this->video->protocol == 'rtmp') {
+            return $response
+                ->withHeader('Content-Type', 'application/zip')
+                ->withHeader(
+                    'Content-Disposition',
+                    'attachment; filename="' . $this->video->title . '.zip"'
+                )
+                ->withBody($stream);
+        }
+
+        if ($this->video->protocol === 'rtmp') {
+            $body     = new Stream($this->downloader->getRtmpStream($this->video));
             $response = $response->withHeader('Content-Type', 'video/' . $this->video->ext);
-            $body = new Stream($this->downloader->getRtmpStream($this->video));
-        } elseif ($this->video->protocol == 'm3u8' || $this->video->protocol == 'm3u8_native') {
+        } elseif (\in_array($this->video->protocol, ['m3u8', 'm3u8_native'], true)) {
+            $body     = new Stream($this->downloader->getM3uStream($this->video));
             $response = $response->withHeader('Content-Type', 'video/' . $this->video->ext);
-            $body = new Stream($this->downloader->getM3uStream($this->video));
         } else {
             $headers = [];
-            $range = $request->getHeader('Range');
-
-            if (!empty($range)) {
+            if ($range = $request->getHeaderLine('Range')) {
                 $headers['Range'] = $range;
             }
-            $stream = $this->downloader->getHttpResponse($this->video, $headers);
 
-            $response = $response->withHeader('Content-Type', $stream->getHeader('Content-Type'));
-            $response = $response->withHeader('Content-Length', $stream->getHeader('Content-Length'));
-            $response = $response->withHeader('Accept-Ranges', $stream->getHeader('Accept-Ranges'));
-            $response = $response->withHeader('Content-Range', $stream->getHeader('Content-Range'));
-            if ($stream->getStatusCode() == StatusCode::HTTP_PARTIAL_CONTENT) {
+            $stream   = $this->downloader->getHttpResponse($this->video, $headers);
+            $response = $response
+                ->withHeader('Content-Type', $stream->getHeaderLine('Content-Type'))
+                ->withHeader('Accept-Ranges', $stream->getHeaderLine('Accept-Ranges'));
+
+            if ($stream->hasHeader('Content-Range')) {
+                $response = $response->withHeader('Content-Range', $stream->getHeaderLine('Content-Range'));
+            }
+            if ($stream->getStatusCode() === StatusCode::HTTP_PARTIAL_CONTENT) {
                 $response = $response->withStatus(StatusCode::HTTP_PARTIAL_CONTENT);
             }
 
+            /* استخدام YoutubeStream عند وجود http_chunk_size */
             if (isset($this->video->downloader_options->http_chunk_size)) {
-                // Workaround for Youtube throttling the download speed.
-                $body = new YoutubeStream($this->downloader, $this->video);
+                $body     = new YoutubeStream($this->downloader, $this->video);
+                // لا نُحدِّد Content-Length لأن الحجم النهائى غير معروف
+                $response = $response->withoutHeader('Content-Length');
             } else {
-                $body = $stream->getBody();
+                $body     = $stream->getBody();
+                $response = $response->withHeader('Content-Length', $stream->getHeaderLine('Content-Length'));
             }
         }
+
+        /* ــــ إرفاق الجسم مع احترام نوع الطلب ــــ */
         if ($request->isGet()) {
             $response = $response->withBody($body);
         }
 
+        /* ــــ تحديد Content-Disposition حسب وجود stream=on ــــ */
+        $disposition = $request->getQueryParam('stream') === 'on' ? 'inline' : 'attachment';
+
         return $response->withHeader(
             'Content-Disposition',
-            'attachment; filename="' .
-            $this->video->getFilename() . '"'
+            sprintf('%s; filename="%s"', $disposition, $this->video->getFilename())
         );
     }
+
 
     /**
      * Get a remuxed stream piped through the server.
