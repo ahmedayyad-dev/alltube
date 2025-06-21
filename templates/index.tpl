@@ -45,14 +45,13 @@
 
     <div id="bookmarklet" class="bookmarklet_wrapper">
     <p>{t}Drag this to your bookmarks bar:{/t}</p>
-    <a class="bookmarklet large-font"
+    <a class="bookmarklet small-font"
        href="javascript:window.location='{$domain}{path_for name=\"info\" queryParams=[\"url\" => \"%url%\"]}'.replace('%url%', encodeURIComponent(location.href));">
 {t}Bookmarklet{/t}
 </a>
 </div>
 
-    {* زر الوصول إلى الـ API على RapidAPI كزر واضح مع تأثير Hover *}
-<div id="api_link" class="api_wrapper" style="margin-top:1.5rem; text-align:center;">
+<div id="api_link" class="api_wrapper" style="margin-top:2rem; text-align:center;">
 <a href="https://rapidapi.com/ahmedyad200/api/youtube-to-telegram-uploader-api" target="_blank"
 class="apiBtn large-font"
 style="display:inline-block; padding:0.75rem 1.5rem; background:#007bff; color:#fff; text-decoration:none; border-radius:0.25rem; transition:background-color .3s;"
