@@ -45,6 +45,7 @@ class Config
         '--restrict-filenames',
         '--no-playlist',
         '--use-extractors',
+        '--proxy',
         'default,-generic',
     ];
 
@@ -168,6 +169,19 @@ class Config
     {
         $this->applyOptions($options);
         $this->getEnv();
+
+        // إضافة proxy لو موجود
+        $proxyUrl = getenv('PROXY');
+        if ($proxyUrl) {
+            // حذف 'default,-generic' مؤقتاً
+            $lastItem = array_pop($this->params);
+            // إضافة proxy
+            $this->params[] = '--proxy';
+            $this->params[] = $proxyUrl;
+            // إضافة 'default,-generic' تاني
+            $this->params[] = $lastItem;
+        }
+
         $this->validateOptions();
 
         foreach ($this->genericFormats as $format => $name) {
