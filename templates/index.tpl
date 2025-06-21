@@ -8,11 +8,11 @@
             {t}Copy here the URL of your video (YouTube, Dailymotion, etc.){/t}
         </label>
         <div class="champs">
-            <span class="URLinput_wrapper">
-                <!-- We used to have an autofocus attribute on this field but it triggerd a very specific CSS bug: https://github.com/Rudloff/alltube/issues/117 -->
-                <input class="URLinput large-font" type="url" name="url" id="url"
-                       required placeholder="https://example.com/video"/>
-            </span>
+        <span class="URLinput_wrapper">
+            <!-- We used to have an autofocus attribute on this field but it triggerd a very specific CSS bug: https://github.com/Rudloff/alltube/issues/117 -->
+            <input class="URLinput large-font" type="url" name="url" id="url"
+                   required placeholder="https://example.com/video"/>
+        </span>
             {if $config->uglyUrls}
                 <input type="hidden" name="page" value="info"/>
             {/if}
@@ -27,12 +27,15 @@
                         </label>
                         {if $config->convertSeek}
                             <div class="seekOptions">
-                                <label for="from">{t}From{/t}</label>
-                                <input type="text" pattern="(\\d+:)?(\\d+:)?\\d+(\\.\\d+)?"
-                                       placeholder="HH:MM:SS" name="from" id="from"/>
-                                <label for="to">{t}to{/t}</label>
-                                <input type="text" pattern="(\\d+:)?(\\d+:)?\\d+(\\.\\d+)?"
-                                       placeholder="HH:MM:SS" name="to" id="to"/>
+                                <label for="from">{t}From{/t}</label> <input type="text"
+                                                                             pattern="(\d+:)?(\d+:)?\d+(\.\d+)?"
+                                                                             placeholder="HH:MM:SS" value=""
+                                                                             name="from"
+                                                                             id="from"/>
+                                <label for="to">{t}to{/t}</label> <input type="text"
+                                                                         pattern="(\d+:)?(\d+:)?\d+(\.\d+)?"
+                                                                         placeholder="HH:MM:SS" value="" name="to"
+                                                                         id="to"/>
                             </div>
                         {/if}
                     </div>
@@ -40,46 +43,33 @@
             {/if}
         </div>
     </form>
-
     <a class="combatiblelink small-font" href="{path_for name="extractors"}">{t}See all supported websites{/t}</a>
-
     <div id="bookmarklet" class="bookmarklet_wrapper">
-        <p>{t}Drag this to your bookmarks bar:{/t}</p>
-        <a class="bookmarklet large-font"
-           href="javascript:window.location='{$domain}{path_for name='info' queryParams=['url' => '%url%']}'.replace('%url%', encodeURIComponent(location.href));">
-            {t}Bookmarklet{/t}
-        </a>
+        <p> {t}Drag this to your bookmarks bar:{/t} </p>
+        <a class="bookmarklet small-font"
+           href="javascript:window.location='{$domain}{path_for name='info' queryParams=['url' => '%url%']}'.replace('%url%', encodeURIComponent(location.href));">{t}Bookmarklet{/t}</a>
     </div>
 
-    <div id="api_link" class="api_wrapper" style="margin-top:1rem; text-align:center;">
+    <div id="api_link" class="api_wrapper" style="margin-top:2rem; text-align:center;">
         <a href="https://rapidapi.com/ahmedyad200/api/youtube-to-telegram-uploader-api" target="_blank" class="api_button">
-            <!-- Option 1: Use RapidAPI default logo -->
-            <img src="https://rapidapi.com/static-assets/default/logo-blue.svg"
-                 alt="RapidAPI - YouTube to Telegram Uploader API" class="apiLogo" style="max-width:150px; height:auto; cursor:pointer; transition: transform 0.2s ease;"/>
-
-            <!-- Option 2: Text-based button (comment out the img above and uncomment below) -->
-            <!-- <div class="api_text_button" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 8px; font-weight: bold; display: inline-block; text-decoration: none; transition: transform 0.2s ease;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; display: inline-block; text-decoration: none; transition: transform 0.2s ease; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3); font-size: 18px;">
                 📡 Access Our API
-            </div> -->
+            </div>
         </a>
-        <p class="small-font" style="margin-top: 0.5rem; color: #666;">
+        <p class="small-font" style="margin-top: 0.8rem; color: #666;">
             {t}Access our API for developers{/t}
         </p>
     </div>
 
     <style>
-        .api_button img:hover {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
-
-        .api_text_button:hover {
-            transform: scale(1.05);
-        }
-
         .api_wrapper {
             border-top: 1px solid #eee;
             padding-top: 1rem;
+        }
+
+        .api_button:hover div {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
     </style>
 {/block}
