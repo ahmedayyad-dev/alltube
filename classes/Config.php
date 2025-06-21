@@ -45,7 +45,6 @@ class Config
         '--restrict-filenames',
         '--no-playlist',
         '--use-extractors',
-        '--proxy',
         'default,-generic',
     ];
 

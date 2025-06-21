@@ -6,8 +6,10 @@
 > - Changed Python version to **`3.9`**
 > - Updated the **Deploy to Heroku** button for the current project
 > - Removed **`alltube-library`** from the project requirements
+> - Added support for setting a **YouTube proxy** via the `PROXY` environment variable
 
 _Commit by `ahmedayyad-dev`_
+
 
 
 
