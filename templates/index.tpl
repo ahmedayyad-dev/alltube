@@ -44,20 +44,20 @@
     <a class="combatiblelink small-font" href="{path_for name='extractors'}">{t}See all supported websites{/t}</a>
 
     <div id="bookmarklet" class="bookmarklet_wrapper">
-    <p>{t}Drag this to your bookmarks bar:{/t}</p>
-    <a class="bookmarklet small-font"
-       href="javascript:window.location='{$domain}{path_for name=\"info\" queryParams=[\"url\" => \"%url%\"]}'.replace('%url%', encodeURIComponent(location.href));">
-{t}Bookmarklet{/t}
-</a>
-</div>
+        <p>{t}Drag this to your bookmarks bar:{/t}</p>
+        <a class="bookmarklet small-font"
+           href="javascript:window.location='{$domain}{path_for name='info' queryParams=['url' => '%url%']}'.replace('%url%', encodeURIComponent(location.href));">
+            {t}Bookmarklet{/t}
+        </a>
+    </div>
 
-<div id="api_link" class="api_wrapper" style="margin-top:2rem; text-align:center;">
-<a href="https://rapidapi.com/ahmedyad200/api/youtube-to-telegram-uploader-api" target="_blank"
-class="apiBtn large-font"
-style="display:inline-block; padding:0.75rem 1.5rem; background:#007bff; color:#fff; text-decoration:none; border-radius:0.25rem; transition:background-color .3s;"
-onmouseover="this.style.backgroundColor='#0056b3'"
-onmouseout="this.style.backgroundColor='#007bff'">
-    {t}Use the API on RapidAPI{/t}
-</a>
-</div>
+    <div id="api_link" class="api_wrapper" style="margin-top:2rem; text-align:center;">
+        <a href="https://rapidapi.com/ahmedyad200/api/youtube-to-telegram-uploader-api" target="_blank"
+           class="apiBtn large-font"
+           style="display:inline-block; padding:0.75rem 1.5rem; background:#007bff; color:#fff; text-decoration:none; border-radius:0.25rem; transition:background-color .3s;"
+           onmouseover="this.style.backgroundColor='#0056b3'"
+           onmouseout="this.style.backgroundColor='#007bff'">
+            {t}Use the API on RapidAPI{/t}
+        </a>
+    </div>
 {/block}
