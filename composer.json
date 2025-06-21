@@ -18,7 +18,7 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.3",
     "ext-intl": "*",
     "ext-json": "*",
     "aura/session": "^2.1",
@@ -33,6 +33,7 @@
     "paragonie/csp-builder": "^2.5",
     "rinvex/countries": "^7.3",
     "symfony/finder": "^5.4",
+    "symfony/process": "^5.4",
     "symfony/translation": "^4.0",
     "symfony/yaml": "^4.0",
     "webfontkit/open-sans": "^1.0",
@@ -91,7 +92,7 @@
       "phpro/grumphp": true
     },
     "platform": {
-      "php": "8.1"
+      "php": "8.3.6"
     },
     "sort-packages": true
   },
