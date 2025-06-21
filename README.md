@@ -3,10 +3,12 @@
 > **Changes made in this update:**
 >
 > - Updated `yt-dlp` version to **`2025.06.09`**
-> - Changed Python version to **`3.9`**
+> - Changed Python version to **`3.10`**
 > - Updated the **Deploy to Heroku** button for the current project
 > - Removed **`alltube-library`** from the project requirements
 > - Added support for setting a **YouTube proxy** via the `PROXY` environment variable
+> - Changed Php version to **`8.1`**
+
 
 _Commit by `ahmedayyad-dev`_
 
