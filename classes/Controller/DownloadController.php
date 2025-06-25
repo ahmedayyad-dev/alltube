@@ -148,7 +148,7 @@ class DownloadController extends BaseController
 
                     return $this->getStream($request, $response);
                 } else {
-//                    $this->video = $this->video->withFormat(Config::addHttpToFormat('mp3'));
+                    $this->video = $this->video->withFormat(Config::addHttpToFormat('mp3'));
 
                     $urls = $this->video->getUrl();
 

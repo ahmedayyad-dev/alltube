@@ -101,10 +101,10 @@ abstract class BaseController
         $this->logger = $this->container->get('logger');
         $this->downloader->setLogger($this->logger);
 
-//        if (!$this->config->stream) {
-//            // Force HTTP if stream is not enabled.
-//            $this->defaultFormat = Config::addHttpToFormat($this->defaultFormat);
-//        }
+        if (!$this->config->stream) {
+            // Force HTTP if stream is not enabled.
+            $this->defaultFormat = Config::addHttpToFormat($this->defaultFormat);
+        }
     }
 
     /**

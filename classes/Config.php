@@ -191,7 +191,7 @@ class Config
             } elseif (!$this->stream) {
                 // Force HTTP if stream is not enabled.
                 $keys = array_keys($this->genericFormats);
-//                $keys[array_search($format, $keys)] = $this->addHttpToFormat($format);
+                $keys[array_search($format, $keys)] = $this->addHttpToFormat($format);
                 if ($genericFormats = array_combine($keys, $this->genericFormats)) {
                     $this->genericFormats = $genericFormats;
                 }
