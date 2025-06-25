@@ -172,12 +172,12 @@ class Config
 
         $proxyUrl = getenv('PROXY');
         if ($proxyUrl && is_string($proxyUrl) and $proxyUrl != 'socks5://user:pass@ip:port') {
-            $lastItem = array_pop($this->params);
+//            $lastItem = array_pop($this->params);
             $this->params[] = '--proxy';
             $this->params[] = $proxyUrl;
-            if ($lastItem !== null) {
-                $this->params[] = $lastItem;
-            }
+//            if ($lastItem !== null) {
+//                $this->params[] = $lastItem;
+//            }
         }
 
         $this->validateOptions();
